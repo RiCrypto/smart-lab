@@ -1,0 +1,22 @@
+image:
+  file: Dockerfile
+
+tasks:
+  - name: Start Smart-Lab
+    init: |
+      pip install -r requirements.txt
+      docker compose up -d
+    command: |
+      echo "Smart-Lab ready! Access n8n at port 5678 or use Python in VS Code."
+ports:
+  - port: 5678
+    onOpen: open-preview
+    name: n8n
+  - port: 8888
+    onOpen: ignore
+    name: Jupyter
+vscode:
+  extensions:
+    - ms-python.python
+    - ms-toolsai.jupyter
+    - ms-azuretools.vscode-docker

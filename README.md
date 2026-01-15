@@ -1,4 +1,4 @@
-# smart-lab
+# SMART-LAB RICRYPTO
 
 
 # Cloud Smart-Lab Tutorial

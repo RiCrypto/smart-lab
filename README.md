@@ -154,3 +154,31 @@ You can enhance your lab with:
 You now have a **Cloud Smart-Lab** — a reproducible, Linux-based, Docker-powered environment for coding, automation, and AI experimentation. It combines the flexibility of n8n workflows with Python-based machine learning tools, making it ideal for scientific and industrial process applications.
 
 Enjoy your cloud-powered research workspace!
+
+## 9. Troubleshooting
+
+how I can start the non_sensitive_trade_v1?
+To start the existing services (n8n, etc.), run:
+
+docker compose up -d
+
+vscode ➜ /workspaces/smart-lab (main) $ docker compose up -d bash: docker: command not found
+docker compose up -d
+how I can use the n8n in smart-lab?
+n8n is running. Access it at:
+
+https://5678--019bc2ce-e362-7651-9605-8639b38a7c50.us-east-1-01.gitpod.dev
+
+Login credentials (from docker-compose.yml):
+
+Username: gitpod
+Password: gitpod123
+
+n8n is now running. Try accessing it again:
+
+https://5678--019bc2ce-e362-7651-9605-8639b38a7c50.us-east-1-01.gitpod.dev
+
+Login credentials:
+
+Username: gitpod
+Password: gitpod123

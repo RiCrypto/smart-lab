@@ -1,7 +1,7 @@
 
 #1. Data Sources & APIs
 #Source	Type	Notes / Example Integration
-SentimenTA (morritse)	Stocks	Free API for sentiment on stocks from Reddit/Twitter
+SentimenTA (morritse)	Stocks	Free API for sentiment on stocks from Reddit/Twitter -- requires Note: The app requires ANTHROPIC_API_KEY environment variable. If you need to set it:
 Alpaca API	Stock trading	Paper trading + real trading endpoints for automation
 Inverse r/CryptoCurrency Bot	Reddit NLP	Provides crypto sentiment with VADER; negative = contrarian buy signal
 SwaggyStocks / QuiverQuant	Retail sentiment + options flow	Can be scraped or use their APIs

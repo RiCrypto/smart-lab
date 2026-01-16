@@ -1,0 +1,12 @@
+
+#1. Data Sources & APIs
+#Source	Type	Notes / Example Integration
+SentimenTA (morritse)	Stocks	Free API for sentiment on stocks from Reddit/Twitter
+Alpaca API	Stock trading	Paper trading + real trading endpoints for automation
+Inverse r/CryptoCurrency Bot	Reddit NLP	Provides crypto sentiment with VADER; negative = contrarian buy signal
+SwaggyStocks / QuiverQuant	Retail sentiment + options flow	Can be scraped or use their APIs
+Reddit API + Pushshift	Social data	Pull trending tickers, posts, karma, and sentiment
+Refinitiv / LSEG	Institutional sentiment feed	(Paid feed) used by hedge funds for sentiment data
+VanEck BUZZ & MEME ETFs	Benchmark data	Compare your composite sentiment score to ETF holdings
+DIY NLP	Your own VADER or FinBERT layer	Evaluate post or tweet tone
+Exchange APIs (Binance, Coinbase, Alpaca)	Execution layer	For both crypto & equities

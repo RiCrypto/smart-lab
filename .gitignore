@@ -1,0 +1,23 @@
+# n8n runtime data (database, logs, binary data)
+data/n8n/database.sqlite
+data/n8n/database.sqlite-shm
+data/n8n/database.sqlite-wal
+data/n8n/crash.journal
+data/n8n/n8nEventLog.log
+data/n8n/config
+data/n8n/binaryData/
+data/n8n/nodes/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+venv/
+.venv/
+
+# Environment
+.env
+.env.local
+
+# OS
+.DS_Store

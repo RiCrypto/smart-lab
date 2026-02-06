@@ -155,30 +155,66 @@ You now have a **Cloud Smart-Lab** — a reproducible, Linux-based, Docker-power
 
 Enjoy your cloud-powered research workspace!
 
-## 9. Troubleshooting
+## 9. Quick Start / Stop Guide
 
-how I can start the non_sensitive_trade_v1?
-To start the existing services (n8n, etc.), run:
-
+### Start n8n
+```bash
 docker compose up -d
+```
+Then open port **5678** in your browser. The URL will be shown in the Gitpod ports panel.
 
-vscode ➜ /workspaces/smart-lab (main) $ docker compose up -d bash: docker: command not found
-docker compose up -d
-how I can use the n8n in smart-lab?
-n8n is running. Access it at:
+### Stop n8n
+```bash
+docker compose down
+```
 
-https://5678--019bc2ce-e362-7651-9605-8639b38a7c50.us-east-1-01.gitpod.dev
+### Restart n8n (e.g. after config changes)
+```bash
+docker compose down && docker compose up -d
+```
 
-Login credentials (from docker-compose.yml):
+### View logs
+```bash
+docker compose logs -f
+```
+Press `Ctrl+C` to stop following logs.
 
-Username: gitpod
-Password: gitpod123
+### Check status
+```bash
+docker compose ps
+```
 
-n8n is now running. Try accessing it again:
+### n8n Login Credentials
+- **Username:** `gitpod`
+- **Password:** `gitpod123`
 
-https://5678--019bc2ce-e362-7651-9605-8639b38a7c50.us-east-1-01.gitpod.dev
+(Defined in `docker-compose.yml` — change these for production use.)
 
-Login credentials:
+---
 
-Username: gitpod
-Password: gitpod123
+## 10. Troubleshooting
+
+### "docker: command not found"
+The Docker-in-Docker feature must be enabled in `.devcontainer/devcontainer.json`. Ensure this block is **uncommented**:
+```json
+"features": {
+  "ghcr.io/devcontainers/features/docker-in-docker": {
+    "moby": false
+  }
+}
+```
+Then rebuild the dev container.
+
+### n8n crashes with `CommunityPackagesModule.loadDir` error
+This is a file permission issue. Fix it with:
+```bash
+sudo chown -R 1000:1000 data/n8n
+docker compose down && docker compose up -d
+```
+
+### n8n won't start at all
+Reset the data directory and start fresh:
+```bash
+rm -rf data/n8n/*
+docker compose down && docker compose up -d
+```
